@@ -58,7 +58,7 @@ $(function(){
 
             // Create the HTML
 
-            this.$el.html('<input type="checkbox" value="1" name="' + this.model.get('title') + '" /> ' + this.model.get('title'));
+            this.$el.html('<p type="text" value="1" name="' + this.model.get('title') + '" /p> ' + this.model.get('title'));
             
 
             // Returning the object is a good practice
@@ -79,7 +79,8 @@ $(function(){
 
         initialize: function(){
 
-            
+            // Cache these selectors
+            this.list = $('#services');
 
             // Listen for the change event on the collection.
             // This is equivalent to listening on every one of the 
@@ -92,7 +93,7 @@ $(function(){
             articles.each(function(article){
 
                 var view = new ArticleView({ model: article });
-                this.ArticleList.append(view.render().el);
+                this.list.append(view.render().el);
 
             }, this);   // "this" is the context in the callback
         },
