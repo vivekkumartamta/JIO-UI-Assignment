@@ -10,7 +10,7 @@ $(function(){
             id: 0000,
             title: 'Article',
             date: 1510387921,
-            contect : "Demo data for Article"
+            content : "Demo data for Article"
         }
     });
 
@@ -27,13 +27,13 @@ $(function(){
                     id: 0001,
                     title: 'Article 1',
                     date: 1510387921,
-                    contect : "Demo data for Article 1",
+                    content : "Demo data for Article 1",
                     checked: false}),
         new Article({ 
                     id: 0002,
                     title: 'Article 2',
                     date: 1510387930,
-                    contect : "Demo data for Article 2",
+                    content : "Demo data for Article 2",
                     checked: false})
         // Add more here
     ]);
@@ -58,7 +58,7 @@ $(function(){
 
             // Create the HTML
 
-            this.$el.html('<p type="text" value="1" name="' + this.model.get('title') + '" /p> ' + this.model.get('title'));
+            this.$el.html('<div class="tooltip">' + this.model.get('title') + '<span class="tooltiptext">'+ this.model.get('content') +'</span></div>');
             
 
             // Returning the object is a good practice
